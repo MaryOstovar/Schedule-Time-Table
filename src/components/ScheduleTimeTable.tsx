@@ -37,7 +37,7 @@ const ScheduleTimeTable = () => {
             <div className="flex justify-start mb-4">
                 <button
                     onClick={toggleSortOrder}
-                    className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+                    className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-1 px-2 text-sm md:text-lg md:py-2 md:px-4 rounded"
                 >
                     {sortOrder === "asc" ? "مرتب‌سازی نزولی" : "مرتب‌سازی صعودی"}
                 </button>
@@ -47,7 +47,7 @@ const ScheduleTimeTable = () => {
                 className={`w-full table-fixed border border-purple-300 rounded-lg overflow-hidden shadow-md ${selectedActivity ? 'bg-gary-100 opacity-60' : ''} `}>
                 <thead className="bg-purple-500 text-white">
                 <tr>
-                    <th className="p-3 text-center">
+                    <th className="md:p-3 p-1 text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                              stroke="currentColor" className="w-6 h-6 mx-auto">
                             <path strokeLinecap="round" strokeLinejoin="round"
@@ -55,7 +55,7 @@ const ScheduleTimeTable = () => {
                         </svg>
                     </th>
                     {days.map((day, index) => (
-                        <th key={index} className="p-3 text-center border-r border-purple-600">
+                        <th key={index} className="md:p-3 p-1 text-xs md:text-lg text-center border-r border-purple-600">
                             {mapNumberToDay(index)} {day}
                         </th>
                     ))}
@@ -64,7 +64,7 @@ const ScheduleTimeTable = () => {
                 <tbody>
                 {sortedHours.map((hour, index) => (
                     <tr key={index}>
-                        <td className="p-3 text-center font-semibold border border-purple-600 bg-purple-500 text-white">
+                        <td className="md:p-3 p-1 text-xs md:text-lg  text-center font-semibold border border-purple-600 bg-purple-500 text-white">
                             {hour}
                         </td>
                         {days.map((day) => {
@@ -74,12 +74,12 @@ const ScheduleTimeTable = () => {
 
                             return (
                                 <td key={`${day}-${hour}`}
-                                    className="p-3 text-center border border-gray-300 hover:bg-purple-100">
+                                    className="md:p-3 p-1  text-center border border-gray-300 hover:bg-purple-100">
                                     {activity ? (
                                         <div
                                             className="max-w-sm bg-white border border-purple-200 rounded-lg shadow-sm">
                                             <a href="#" onClick={() => showModal(activity)}>
-                                                <p className="mb-2 p-4 text-sm text-left font-bold text-gray-900 truncated-text">
+                                                <p className="mb-2 p-1 md:p-4 text-[6px] md:text-sm md:text-left font-bold text-gray-900 truncated-text">
                                                     {activity.title.length > 20 ? `${activity.title.slice(0, 20)}...` : activity.title}
                                                 </p>
                                             </a>
