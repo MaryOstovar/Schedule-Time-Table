@@ -1,51 +1,97 @@
-# React + TypeScript + Vite
+حتماً! در اینجا یک نمونه `README.md` برای پروژه شما ارائه می‌شود که به‌طور کلی اطلاعات پروژه را شامل می‌شود و برای استفاده، نصب، و مشارکت در پروژه مفید است:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```markdown
+# جدول زمان‌بندی فعالیت‌ها
 
-Currently, two official plugins are available:
+این پروژه یک **جدول زمان‌بندی پویا** است که با استفاده از **React**، **TypeScript** و **Tailwind CSS** ساخته شده است. این جدول زمان‌بندی شامل فعالیت‌ها برای یک هفته آینده است که از API به‌صورت دینامیک بارگذاری می‌شود. همچنین، کاربران می‌توانند جزئیات فعالیت‌ها را مشاهده کنند که در یک **پاپ‌آپ** (Modal) نمایش داده می‌شود.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ویژگی‌ها
 
-## Expanding the ESLint configuration
+- نمایش **زمان‌بندی** یک هفته آینده به‌صورت **جدولی**.
+- **مرتب‌سازی صعودی و نزولی** برای ساعات روز.
+- **پاپ‌آپ** برای مشاهده جزئیات هر فعالیت.
+- **پشتیبانی از تاریخ شمسی** با استفاده از کتابخانه **`dayjs`**.
+- **بارگذاری دینامیک داده‌ها** از یک API (خدمات فعالیت‌ها).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## پیش‌نیازها
 
-- Configure the top-level `parserOptions` property like this:
+قبل از شروع، اطمینان حاصل کنید که ابزارهای زیر نصب شده‌اند:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Node.js**: برای اجرای پروژه نیاز به نسخه‌های جدیدتر از 14.x دارید.
+- **Yarn**: مدیر بسته‌ی پیش‌فرض این پروژه است.
+
+## نصب و راه‌اندازی
+
+### 1. کلون کردن پروژه:
+
+برای شروع، پروژه را از گیت‌هاب کلون کنید:
+
+```bash
+git clone https://github.com/username/repository-name.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. نصب وابستگی‌ها:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+ابتدا به دایرکتوری پروژه بروید و سپس وابستگی‌ها را نصب کنید:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd repository-name
+yarn install
 ```
-# Schedule-Time-Table
+
+### 3. اجرای پروژه:
+
+پس از نصب تمام وابستگی‌ها، برای شروع پروژه دستور زیر را اجرا کنید:
+
+```bash
+yarn start
+```
+
+سپس می‌توانید پروژه را در مرورگر خود با آدرس `http://localhost:3000` مشاهده کنید.
+
+## استفاده
+
+1. **زمان‌بندی**: جدول زمان‌بندی به‌صورت داینامیک با استفاده از داده‌های API بارگذاری می‌شود.
+2. **مشاهده جزئیات فعالیت‌ها**: با کلیک بر روی هر فعالیت در جدول، پاپ‌آپی نمایش داده می‌شود که جزئیات فعالیت را به کاربر نشان می‌دهد.
+3. **مرتب‌سازی ساعات**: شما می‌توانید ساعات روز را از **۸ صبح تا ۵ عصر** به ترتیب **صعودی یا نزولی** مرتب کنید.
+
+## ساختار پروژه
+
+پروژه از **React** برای رابط کاربری، **TypeScript** برای تایپینگ و **Tailwind CSS** برای استایل‌دهی استفاده می‌کند. همچنین برای مدیریت حالت‌ها از **React Query** و برای کار با تاریخ از **dayjs** استفاده شده است.
+
+- `src/`: دایرکتوری حاوی کدهای منبع.
+  - `components/`: شامل کامپوننت‌های مختلف مانند جدول زمان‌بندی و پاپ‌آپ (Modal).
+  - `hooks/`: هوک‌های سفارشی React.
+  - `services/`: فایل‌های مربوط به API و داده‌ها.
+  - `helpers/`: توابع کمکی و ابزارهای استفاده‌شده در پروژه.
+
+## مشارکت در پروژه
+
+اگر می‌خواهید در این پروژه مشارکت کنید، مراحل زیر را دنبال کنید:
+
+1. یک **فورک** از این مخزن بگیرید.
+2. تغییرات خود را ایجاد کنید.
+3. یک **Pull Request** از شاخه‌ی خود به شاخه‌ی اصلی ارسال کنید.
+
+## تکنولوژی‌ها و کتابخانه‌ها
+
+- **React**: برای ایجاد رابط کاربری.
+- **TypeScript**: برای افزودن تایپ استاتیک به کد.
+- **Tailwind CSS**: برای استایل‌دهی سریع و واکنش‌گرا.
+- **React Query**: برای مدیریت داده‌ها و درخواست‌های API.
+- **dayjs**: برای کار با تاریخ‌ها و تبدیل آن‌ها به تقویم شمسی.
+
+## نویسندگان
+
+این پروژه توسط [نام شما](https://github.com/username) ساخته شده است.
+
+## لایسنس
+
+این پروژه تحت لایسنس MIT قرار دارد - برای جزئیات بیشتر لطفاً فایل [LICENSE](LICENSE) را مشاهده کنید.
+```
+
+### **توضیحات:**
+- **توضیحات کلی**: ابتدا توضیحاتی در مورد پروژه، ویژگی‌ها و نحوه کار آن آورده شده است.
+- **پیش‌نیازها و نصب**: به‌طور واضح نحوه نصب ابزارها و اجرای پروژه توضیح داده شده است.
+- **ساختار پروژه**: ساختار پوشه‌های پروژه و محل قرارگیری فایل‌های مختلف توضیح داده شده است.
+- **مشارکت**: راه‌های مشارکت در پروژه برای کسانی که می‌خواهند تغییراتی ایجاد کنند یا کمک کنند.
