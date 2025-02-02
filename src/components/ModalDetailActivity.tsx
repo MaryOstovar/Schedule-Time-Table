@@ -6,8 +6,8 @@ interface Props {
 }
 const ModalDetailActivity = ({activity, onClose}: Props) => {
     return (
-        <div className="fixed inset-50 bg-transparent bg-opacity-50 flex items-center justify-center">
-            <div className="bg-white text-gray-800 p-8 rounded-lg max-w-lg w-full">
+        <div className="fixed inset-50 bg-transparent bg-opacity-50 flex items-center justify-center ">
+            <div className="bg-white text-gray-800 p-8 rounded-lg max-w-lg w-full shadow-lg">
                 <h2 className="text-xl text-purple-800 font-bold mb-4">جزئیات فعالیت</h2>
                 <h6 className='text-purple font-bold'>{activity.title}</h6>
                 <br />
